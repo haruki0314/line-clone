@@ -9,9 +9,10 @@ function SignIn() {
   function singWithGoogle() {
     // function singWithGoogle(this: any) {
     // const { user } = this.state;
-    alert("login");
+    // alert("login");
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
+    // alert("ログインに成功しました！");
   }
   return (
     <div>
@@ -20,8 +21,9 @@ function SignIn() {
         disableElevation
         // endIcon={<SendIcon />}
         onClick={singWithGoogle}
+        style={{ margin: 30 }}
       >
-        login
+        Googleにログインしてチャットを開始
       </Button>
       {/* <Button>login</Button> */}
     </div>

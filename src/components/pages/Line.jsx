@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import SignOut from "./SignOut";
 import { Button } from "@mui/material";
 import firebase from "firebase/compat/app";
@@ -7,6 +7,7 @@ import { db } from "../../firebase.js";
 import SendMessage from "./SendMessage";
 
 function Line() {
+  const scroll = useRef();
   const [messages, setMessages] = useState([]);
   useEffect(() => {
     db.collection("message")
@@ -28,6 +29,7 @@ function Line() {
             <div
               key={id}
               className={`msg ${
+                //currenUserと一緒であれば sent　以外であればreceivedにする。→レイアウト変更
                 uid === auth.currentUser.uid ? "sent" : "received"
               }`}
             >
@@ -37,7 +39,8 @@ function Line() {
           </div>
         ))}
       </div>
-      <SendMessage />
+      <SendMessage scroll={scroll} />
+      <div ref={scroll}></div>
     </div>
   );
 }
