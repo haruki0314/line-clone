@@ -1,3 +1,13 @@
+# Thank you for visiting this page.
+
+このアプリはスマートフォンアプリで有名な Line を clone したものになります。
+React.js CSS MaterialUI Firebase を用いて開発を行いました。
+
+useEffect や useState と言われる基本中の hooks を正確に利用し、
+正しく firebase に非同期処理を行い、メッセージを読み込んだり格納するような処理を作成しました。
+
+firebase 内の機能を用い、Google のログイン認証を導入しています。
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
