@@ -14,7 +14,7 @@ function Line() {
       .onSnapshot((snapShot) => {
         setMessages(snapShot.docs.map((doc) => doc.data()));
         // setMessages(snapShot.docs.map((doc) => doc.data()));
-      }, []);
+      });
   }, []);
   return (
     <div>
